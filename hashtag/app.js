@@ -3,6 +3,7 @@ import express from 'express'
 
 const app = express()
 
+app.use(express.json())
 app.listen(3000, () => console.log('Servidor rodando com sucesso'))
 
 app.get('/', (requisicao, resposta) => {
@@ -18,3 +19,27 @@ app.get('/:sigla', (requisicao, resposta) => {
     }
     resposta.status(200).send(time)
 })
+
+app.put('/:sigla', (req, res) => {
+    const siglaInformada = req.params.sigla.toUpperCase()
+    const timeSelecionado = tabela2024.find(t => t.sigla == siglaInformada)
+    const campos = Object.keys(req.body)
+    for(let campo of campos){
+        timeSelecionado[campo] =req.body[campo]
+    }
+    res.status(200).send(timeSelecionado)
+})
+
+app.post('/', (req, res) => {
+    const novoTime = req.body
+    tabela2024.push(novoTime)
+    res.status(200).send(novoTime)
+})
+
+app.delete('/:sigla', (req, res) => {
+    const siglaInformada = req.params.sigla.toUpperCas
+    const indiceTimeSelecionado = tabela2024.findIndex(t => t.sigla === siglaInformada )
+    const timeRemovido = tabela2024.splice(indiceTimeSelecionado, 1)
+    res.status(200).send(timeRemovido)
+})
+/* app.listen(3000, () => console.log('servidor rodando com sucesso')) */
