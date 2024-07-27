@@ -1,0 +1,27 @@
+POST http://localhost:3333/events
+Content-Type: application/json
+
+{
+    "title": "Novo Evento 2",
+    "details": "Um evento",
+    "maximumAttendees": 1
+}
+
+###
+
+POST http://localhost:3333/events/1ea12c31-7de6-45d1-a649-6cd77fa7b1af/attendees
+Content-Type: application/json
+
+{
+    "name": "Clóvis Balreira",
+    "email": "clovisbalreira@gmail2.com"
+}
+
+###
+GET http://localhost:3333/events/1ea12c31-7de6-45d1-a649-6cd77fa7b1af
+
+###
+GET http://localhost:3333/attendees/1/badge
+
+###
+GET http://localhost:3333/attendees/1/check-in

@@ -10,5 +10,4 @@ async function criarEPopularTabelaUsuario(nome, sobrenome){
     db.run('CREATE TABLE IF NOT EXISTS usuarios ( id INTEGER PRIMARY KEY, nome TEXT, sobrenome TEXT)')
     db.run('INSERT INTO usuarios (nome, sobrenome) VALUES (?,?)', [nome,sobrenome])
 }
-
 criarEPopularTabelaUsuario('Maria','Balreira')
