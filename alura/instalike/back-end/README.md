@@ -1,13 +1,30 @@
-npm init es6 -y
+# Instalike Back-end
 
-npm install express
+📌 Descrição
+API de backend em Node.js para um projeto de rede social com upload de arquivos e persistência em MongoDB.
 
-node server.js
+🚀 Tecnologias
+- Node.js
+- Express
+- MongoDB
+- multer
 
-node --watch server.js
+🎯 Funcionalidades
+- Rotas para gerenciar posts e dados de usuário.
+- Upload de arquivos com `multer`.
+- Armazenamento de dados em MongoDB.
 
-npm install mongodb
+<!--🖥️ Demonstração
+Link do projeto online:
+https://seu-link-aqui.com
 
-npm run dev
+📸 Imagens-->
 
-npm install multer
+▶️ Como rodar
+- Clone o repositório
+- Execute `npm install`
+- Configure as variáveis de ambiente no arquivo `.env`
+- Execute `npm run dev`
+
+📚 Aprendizados
+Aprendi a criar APIs REST, trabalhar com upload de arquivos e integrar o Node.js com o MongoDB.

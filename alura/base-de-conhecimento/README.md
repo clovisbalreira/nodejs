@@ -1,48 +1,29 @@
-# Gerador de Base de Conhecimento (Gemini)
+# Base de Conhecimento
 
-Descrição curta
-Cria e expande automaticamente uma base de conhecimento em JSON adicionando, em cada execução, 25 novas entradas únicas sobre tecnologias (linguagens, frameworks, ferramentas, bancos de dados, metodologias). A lógica usa a API Gemini para gerar conteúdo estruturado e valida/mescla o resultado com o arquivo local `baseDeConhecimento.json`.
+📌 Descrição
+Projeto Node.js que gera e atualiza uma base de conhecimento em JSON usando a API Gemini.
 
-O que ele faz (resumido)
-- Gera exatamente 25 novas entradas em formato JSON.
-- Evita repetir nomes já presentes na base.
-- Faz validação básica da resposta (garante que seja um ARRAY com 25 objetos).
-- Realiza tentativas com backoff exponencial em caso de falhas.
-- Atualiza (sobrescreve) o arquivo `baseDeConhecimento.json` com a base combinada.
+🚀 Tecnologias
+- Node.js
+- JavaScript
+- dotenv
 
-Pré-requisitos
-- Node.js instalado (v16+ recomendado).
-- Chave da Gemini API.
+🎯 Funcionalidades
+- Gera 25 novas entradas de conhecimento em JSON.
+- Valida e mescla o resultado com `baseDeConhecimento.json`.
+- Faz tentativas em caso de falhas na API.
 
-Como executar (resumido)
-1. Instale dependências:
-   ```js
-   npm install
-   ```
+<!--🖥️ Demonstração
+Link do projeto online:
+https://seu-link-aqui.com
 
-3. Crie um arquivo `.env` na raiz com:
-   GEMINI_API_KEY="SUA_CHAVE_AQUI"
+📸 Imagens-->
 
-4. Execute:
-   ```js
-   npm start
-   ```
+▶️ Como rodar
+- Clone o repositório
+- Execute `npm install`
+- Crie um arquivo `.env` com a variável `GEMINI_API_KEY="SUA_CHAVE_AQUI"`
+- Execute `npm start`
 
-O que esperar
-- Ao finalizar, o arquivo `baseDeConhecimento.json` será atualizado com as entradas antigas + 25 novas geradas.
-- Logs no console informam sucesso, número de itens e possíveis erros.
-
-Onde ajustar comportamento
-- Para alterar a quantidade gerada, edite a constante `TOTAL_ITEMS` em [gerador.js](gerador.js) (`TOTAL_ITEMS`).
-- Função responsável pela geração: [`generateNewKnowledge`](gerador.js).
-- Fluxo principal: [`main`](gerador.js).
-
-Arquivos principais
-- [gerador.js](gerador.js) — script principal que chama a API e atualiza a base.
-- [baseDeConhecimento.json](baseDeConhecimento.json) — arquivo de dados que será atualizado.
-- [package.json](package.json) — configuração do projeto e script de start.
-- Crie [.env](.env) na raiz com a variável GEMINI_API_KEY.
-
-Avisos rápidos
-- O arquivo `baseDeConhecimento.json` será sobrescrito ao final do processo.
-- Verifique limites e custos da API Gemini antes de executar em escala.
+📚 Aprendizados
+Aprendi a consumir APIs externas, trabalhar com arquivos JSON e usar variáveis de ambiente no Node.js.
